@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "dependencies": {
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "live-server": "^1.2.0",
+    "stylelint": "^9.1.1",
+    "stylelint-config-recommended": "^2.1.0"
+  },
+  "scripts": {
+    "start": "live-server .",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
+    "lint:js": "eslint --ext js js",
+    "lint:js:fix": "eslint --fix --ext js js",
+    "lint:css": "stylelint \"css/*.css\"",
+    "lint:css:fix": "stylelint --fix \"src/*.css\""
+  }
+}
