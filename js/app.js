@@ -31,7 +31,7 @@
         <label>${this.title}</label>
         <button class="destroy"></button>
       </div>
-      <input class="edit" value="${this.title}">
+      <input class="edit" value="${this.title}" autofocus>
     `;
 
       qs('input.toggle', li).addEventListener(
@@ -78,7 +78,6 @@
         this.title = value;
         this.onCompleted(this);
       } else if (event.keyCode === 27) {
-        this.initialValue;
         event.target.value = this.initialValue;
         event.target.parentNode.childNodes[1].childNodes[3].innerHTML = this.initialValue;
         event.target.parentNode.classList.remove('editing');
@@ -238,9 +237,7 @@
       if (task.completed === true) {
         this.completedTaskList.push(task);
       }
-      window.addEventListener('hashchange', (event) => {
-        console.log('location.hash has been changed');
-     });
+
       this.totalTasksCounter();
       this.dump();
     }
